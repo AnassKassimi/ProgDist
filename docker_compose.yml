@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  employee:
+    container_name: employee
+    build:
+      context: docker-employee
+      dockerfile: Dockerfile
+    image: employee:latest
+    ports:
+      - "8000:5000"
+    networks:
+      - spring-cloud-network
+networks:
+  spring-cloud-network:
+    driver: bridge
